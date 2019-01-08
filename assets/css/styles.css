@@ -177,7 +177,11 @@ footer a {
 }
 
 #loader {
-	background: blue;
+	background: rgba(0,0,0,.85);
+	background-image: url('./../img/missoula-skyline.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 	height: 100%;
 	width: 100%;
 	/*border: 2px solid green;*/
@@ -189,8 +193,8 @@ footer a {
 
 .loaded #loader {
     opacity: 0;
-    -webkit-transition: all 2s 5s ease-out;
-            transition: all 2s 5s ease-out;
+    -webkit-transition: all 1s 3s ease-out;
+            transition: all 1s 3s ease-out;
 
 }
 .loaded #loader-wrapper {
