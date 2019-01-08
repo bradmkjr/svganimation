@@ -1,0 +1,281 @@
+html {
+	height: 100%;
+	font-size: 3.5vw;
+	line-height: 1.0rem;
+	font-family: 'Open Sans', sans-serif;
+
+
+}
+
+body {
+	padding-top: 2.5rem;
+	font-size: 100%;
+	line-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight: 300;
+}
+
+header {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	background: rgba(66,66,66,.65);
+	text-align: center;
+}
+
+header h1 {
+	font-size: 1.25rem;
+	line-height: 2.5rem;
+}
+
+header h1 span {
+	font-size: .65rem;
+	line-height: .65rem;
+	color: #FFF;
+	display: inline-block;
+}
+
+#content {}
+
+.flex-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	width: 100%;
+}
+
+.flex-container > div {
+	flex: 1;
+}
+
+section .flex-container {
+	justify-content: space-between;
+} 
+
+section .flex-container > div {
+	padding: 1.0rem;
+}
+
+
+section h3 {
+	text-decoration: underline;
+	line-height: 2.0rem;
+}
+
+aside,
+section {
+	padding: .5rem;
+}
+
+aside {
+	background: #efefef;
+	min-height: calc( 100vh - 2.5rem - 1.05rem);
+	flex: 2;
+}
+
+section {
+	flex: 8;
+	text-align: center;
+	/*background: blue;*/
+}
+
+@keyframes rotate-0 {
+  100% { transform: rotate(1800deg); }
+}
+
+@keyframes rotate-1 {
+  100% { transform: rotate(2700deg); }
+}
+
+@keyframes rotate-2 {
+  100% { transform: rotate(4500deg); }
+}
+
+@keyframes rotate-3 {
+  100% { transform: rotate(7200deg); }
+}
+
+@keyframes rotate-4 {
+  100% { transform: rotate(11700deg); }
+}
+
+.rotate.level-0 {
+	animation-name: rotate-0;
+	animation-duration: 1000ms; /* duration of single spin */
+}
+
+.rotate.level-1 {
+	animation-name: rotate-1;
+	animation-duration: 2000ms; /* duration of single spin */
+}
+
+.rotate.level-2 {
+	animation-name: rotate-2;
+	animation-duration: 3000ms; /* duration of single spin */
+}
+
+.rotate.level-3 {
+	animation-name: rotate-3;
+	animation-duration: 4000ms; /* duration of single spin */
+}
+.rotate.level-4 {
+	animation-name: rotate-4;
+	animation-duration: 5000ms; /* duration of single spin */
+}
+
+
+.rotate {
+	animation-iteration-count: 1;
+	animation-direction: normal; /* or: alternate */
+	animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+	animation-fill-mode: forwards; /* or: backwards, both, none */
+	animation-delay: 0s; /* or: Xms */
+}
+
+
+dl {
+	line-height: 2.0rem;
+}
+
+
+footer {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background: rgba(66,66,66,.65);
+	color: #FFF;
+	/*padding: .20rem;*/
+	font-size: .65rem;
+	line-height: 1.05rem;
+	text-align: center;
+	font-weight: normal;
+}
+
+footer a {
+	color: #dedede;
+}
+
+
+#loader-wrapper {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 999;
+}
+
+#loader {
+	background: blue;
+	height: 100%;
+	width: 100%;
+	/*border: 2px solid green;*/
+
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+}
+
+.loaded #loader {
+    opacity: 0;
+    -webkit-transition: all 2s 5s ease-out;
+            transition: all 2s 5s ease-out;
+
+}
+.loaded #loader-wrapper {
+    /*visibility: hidden;*/
+
+    /*-webkit-transition: all 0.3s 1s ease-out;
+            transition: all 0.3s 1s ease-out;*/
+}
+
+#loader .img-wrapper {
+	flex: 1;
+	max-width: 20%;
+	/*margin: 0px;*/
+	/*top: 50%;
+	margin-top: -50%;
+	width: 30vw;
+	height: auto;
+	position: relative;
+	left: 50%;
+	margin-left: -50%;
+	background: purple;*/
+	/*display: block;*/
+	/*margin-left: -50%;*/
+}
+
+/* JavaScript Turned Off */
+.no-js #loader-wrapper {
+    display: none;
+}
+
+.path {
+        fill: none;
+        stroke: #FFF;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+
+      .arrowhead {
+        stroke: #FFF;
+        fill: #FFF;
+        stroke-width: 0px;
+      }
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear alternate infinite;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+	html {
+		font-size: 2.5vw;
+	}
+} 
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	html {
+		font-size: 2.0vw;
+	}
+} 
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	html {
+		font-size: 1.5vw;
+	}
+} 
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	html {
+		font-size: 1.0vw;
+	}
+}
