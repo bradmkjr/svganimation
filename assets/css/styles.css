@@ -266,8 +266,8 @@ svg rect.svg-logo {
 .path {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: dash 3500ms linear alternate infinite;
-  -webkit-animation: dash 3500ms linear alternate infinite;
+  animation: dash 6500ms linear alternate infinite;
+  -webkit-animation: dash 6500ms linear alternate infinite;
 }
 
 @keyframes dash {
