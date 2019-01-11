@@ -191,10 +191,46 @@ footer a {
   	justify-content: center;
 }
 
+#loader {
+	-webkit-animation: grayscale 5s 1;
+	animation: grayscale 5s 1;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+@keyframes grayscale {
+  0% { -webkit-filter: grayscale(0%); }
+  100% { -webkit-filter: grayscale(100%); }
+}
+
+svg path.svg-logo {
+	fill: rgba(255,255,255,0);
+	stroke: rgba(255,255,255,0);
+	-webkit-animation: fadeIn 2s 1s;
+	animation: fadeIn 2s 1s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+svg rect.svg-logo {
+	fill: rgba(255,255,255,0);
+	stroke: rgba(255,255,255,0);
+	-webkit-animation: fadeIn 2s 1s;
+	animation: fadeIn 2s 1s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% { fill: rgba(255,255,255,0); }
+  100% { fill: rgba(255,255,255,1); }
+}
+
+
 .loaded #loader {
     opacity: 0;
-    -webkit-transition: all 1s 3s ease-out;
-            transition: all 1s 3s ease-out;
+    -webkit-transition: all 500ms 4500ms ease-out;
+            transition: all 500ms 4500ms ease-out;
 
 }
 .loaded #loader-wrapper {
@@ -206,18 +242,7 @@ footer a {
 
 #loader .img-wrapper {
 	flex: 1;
-	max-width: 20%;
-	/*margin: 0px;*/
-	/*top: 50%;
-	margin-top: -50%;
-	width: 30vw;
-	height: auto;
-	position: relative;
-	left: 50%;
-	margin-left: -50%;
-	background: purple;*/
-	/*display: block;*/
-	/*margin-left: -50%;*/
+	max-width: 50%;
 }
 
 /* JavaScript Turned Off */
@@ -241,7 +266,8 @@ footer a {
 .path {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: dash 5s linear alternate infinite;
+  animation: dash 3500ms linear alternate infinite;
+  -webkit-animation: dash 3500ms linear alternate infinite;
 }
 
 @keyframes dash {
@@ -261,12 +287,19 @@ footer a {
 	html {
 		font-size: 2.5vw;
 	}
+
+	#loader .img-wrapper {
+		max-width: 50%;
+	}
 } 
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 	html {
 		font-size: 2.0vw;
+	}
+	#loader .img-wrapper {
+		max-width: 45%;
 	}
 } 
 
@@ -275,11 +308,17 @@ footer a {
 	html {
 		font-size: 1.5vw;
 	}
+	#loader .img-wrapper {
+		max-width: 35%;
+	}
 } 
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 	html {
 		font-size: 1.0vw;
+	}
+	#loader .img-wrapper {
+		max-width: 25%;
 	}
 }
