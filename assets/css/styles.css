@@ -45,12 +45,6 @@ body::before {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  opacity: 0;
-  -webkit-animation: fadeInBoxe 1s 5s;
-	animation: fadeInBoxes 1s 5s;
-	-webkit-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
-	z-index: 1500;
 }
 .grid2x2 > div {
   display: flex;
@@ -64,13 +58,33 @@ body::before {
   flex-direction: row;
 }
 
-/*.box1 { background-color: red; }
-.box2 { background-color: orange; }
-.box3 { background-color: purple; }
-.box4 { background-color: grey; }
+.box1 { opacity: 0;
+  -webkit-animation: fadeInBoxe 1s 5000ms;
+	animation: fadeInBoxes 1s 5000ms;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	z-index: 1500; }
+.box2 { opacity: 0;
+  -webkit-animation: fadeInBoxe 1s 5250ms;
+	animation: fadeInBoxes 1s 5250ms;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	z-index: 1500; }
+.box3 { opacity: 0;
+  -webkit-animation: fadeInBoxe 1s 5500ms;
+	animation: fadeInBoxes 1s 5500ms;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	z-index: 1500; }
+.box4 { opacity: 0;
+  -webkit-animation: fadeInBoxe 1s 5750ms;
+	animation: fadeInBoxes 1s 5750ms;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	z-index: 1500; }
 
 
-*/
+
 
 .box {
 	margin: 10px 20px;
