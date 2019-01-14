@@ -8,9 +8,75 @@ html {
 }
 
 body {
-	padding-top: 2.5rem;
+	/*padding-top: 2.5rem;*/
 	font-size: 100%;
 	line-height: 100%;
+	min-height: 100%;
+	height: 100%;
+
+	background: rgba(0,0,0,.85);
+
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  background-image: url('./../img/missoula-skyline.jpg');
+  -webkit-animation: grayscale 5s 1;
+	animation: grayscale 5s 1;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+@keyframes grayscale {
+  0% { -webkit-filter: grayscale(0%); }
+  100% { -webkit-filter: grayscale(100%); }
+}
+
+.grid2x2 {
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  opacity: 0;
+  -webkit-animation: fadeInBoxe 1s 5s;
+	animation: fadeInBoxes 1s 5s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	z-index: 1500;
+}
+.grid2x2 > div {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: center;
+  flex-direction: column;
+}
+.grid2x2 > div > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+/*.box1 { background-color: red; }
+.box2 { background-color: orange; }
+.box3 { background-color: purple; }
+.box4 { background-color: grey; }
+
+
+*/
+
+.box {
+	margin: 10px 20px;
+	background: rgba(255,255,255,.5);
+	border: 2px solid rgba(255,255,255,.85);
+
 }
 
 a {
@@ -89,64 +155,6 @@ section {
 	/*background: blue;*/
 }
 
-@keyframes rotate-0 {
-  100% { transform: rotate(1800deg); }
-}
-
-@keyframes rotate-1 {
-  100% { transform: rotate(2700deg); }
-}
-
-@keyframes rotate-2 {
-  100% { transform: rotate(4500deg); }
-}
-
-@keyframes rotate-3 {
-  100% { transform: rotate(7200deg); }
-}
-
-@keyframes rotate-4 {
-  100% { transform: rotate(11700deg); }
-}
-
-.rotate.level-0 {
-	animation-name: rotate-0;
-	animation-duration: 1000ms; /* duration of single spin */
-}
-
-.rotate.level-1 {
-	animation-name: rotate-1;
-	animation-duration: 2000ms; /* duration of single spin */
-}
-
-.rotate.level-2 {
-	animation-name: rotate-2;
-	animation-duration: 3000ms; /* duration of single spin */
-}
-
-.rotate.level-3 {
-	animation-name: rotate-3;
-	animation-duration: 4000ms; /* duration of single spin */
-}
-.rotate.level-4 {
-	animation-name: rotate-4;
-	animation-duration: 5000ms; /* duration of single spin */
-}
-
-
-.rotate {
-	animation-iteration-count: 1;
-	animation-direction: normal; /* or: alternate */
-	animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
-	animation-fill-mode: forwards; /* or: backwards, both, none */
-	animation-delay: 0s; /* or: Xms */
-}
-
-
-dl {
-	line-height: 2.0rem;
-}
-
 
 footer {
 	position: fixed;
@@ -173,15 +181,10 @@ footer a {
 	bottom: 0px;
 	left: 0px;
 	right: 0px;
-	z-index: 999;
+	z-index: 1440;
 }
 
 #loader {
-	background: rgba(0,0,0,.85);
-	background-image: url('./../img/missoula-skyline.jpg');
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
 	height: 100%;
 	width: 100%;
 	/*border: 2px solid green;*/
@@ -191,17 +194,7 @@ footer a {
   	justify-content: center;
 }
 
-#loader {
-	-webkit-animation: grayscale 5s 1;
-	animation: grayscale 5s 1;
-	-webkit-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
-}
 
-@keyframes grayscale {
-  0% { -webkit-filter: grayscale(0%); }
-  100% { -webkit-filter: grayscale(100%); }
-}
 
 svg path.svg-logo {
 	fill: rgba(255,255,255,0);
@@ -226,6 +219,11 @@ svg rect.svg-logo {
   100% { fill: rgba(255,255,255,1); }
 }
 
+@keyframes fadeInBoxes {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 
 .loaded #loader {
     opacity: 0;
@@ -233,7 +231,12 @@ svg rect.svg-logo {
             transition: all 500ms 4500ms ease-out;
 
 }
-.loaded #loader-wrapper {
+
+.no-js .grid2x2 {
+	display: block;
+}
+
+ #loader-wrapper {
     /*visibility: hidden;*/
 
     /*-webkit-transition: all 0.3s 1s ease-out;
@@ -291,7 +294,10 @@ svg rect.svg-logo {
 	#loader .img-wrapper {
 		max-width: 50%;
 	}
-} 
+
+
+
+}
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
@@ -300,6 +306,20 @@ svg rect.svg-logo {
 	}
 	#loader .img-wrapper {
 		max-width: 45%;
+	}
+
+		.grid2x2 > div {
+	  display: flex;
+	  flex-basis: calc(50% - 44px);
+	  justify-content: center;
+	  flex-direction: column;
+	}
+
+	.box {
+		margin: 20px 20px;
+		background: rgba(255,255,255,.5);
+		border: 2px solid rgba(255,255,255,.85);
+
 	}
 } 
 

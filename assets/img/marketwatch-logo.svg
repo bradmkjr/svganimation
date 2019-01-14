@@ -1,0 +1,21 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 378">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #2390c4;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>Market Watch Symbol</title>
+  <g>
+    <circle class="cls-1" cx="288" cy="189" r="77"/>
+    <g>
+      <polygon class="cls-2" points="252.52 247.98 239.13 213.17 244.29 211.19 252.13 231.56 262.75 199.43 270.9 221.22 293.13 161.77 302.58 186.08 319.11 140.99 324.3 142.89 302.74 201.73 293.23 177.29 270.91 237 263.08 216.07 252.52 247.98"/>
+      <polygon class="cls-2" points="312.53 141.33 326.08 130.02 329.11 147.4 312.53 141.33"/>
+    </g>
+  </g>
+</svg>
